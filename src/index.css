@@ -4,3 +4,8 @@ p,
 body {
   font-family: "Nunito", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+
+h1 {
+  text-transform: uppercase;
+  color: white;
+}

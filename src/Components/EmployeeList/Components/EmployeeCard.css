@@ -1,0 +1,8 @@
+.emp-card {
+  width: 250px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}

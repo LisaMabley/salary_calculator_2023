@@ -1,0 +1,9 @@
+/* More information about flexbox styling available here:
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+  }
