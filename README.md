@@ -4,7 +4,7 @@
 
 ### Currency formatting
 
-This application uses a function that formats numbers as currency. It's defined in [this file](utils/formatAsUSD.js). Find more information [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat).
+This application uses a function that formats numbers as currency. It's defined in [this file](src/utils/formatAsUSD.js). Find more information [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat).
 
 ## Available Scripts for Developers
 
