@@ -8,9 +8,6 @@ function PageFooter() {
   // --- GLOBAL STORE ---
 
   // Get the employeeList from the global store
-  // If we had other elements in the store, we could 
-  // access those the same way, but using store.otherInfoFromStore 
-  // (using the name defined in index.js)
   const employeeList = useSelector(store => store.employeeList);
 
   // --- LOCAL STORE ---
@@ -23,7 +20,7 @@ function PageFooter() {
 
   useEffect(() => {
     // This effect is watching the employeeList in the global store.
-    // (It's added on line 45.) This function will run whenever there
+    // (It's added on line 42.) This function will run whenever there
     // is a change in the employeeList in the global store.
 
     // Whenever there is a change in the employee list,
