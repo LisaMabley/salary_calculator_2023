@@ -4,6 +4,12 @@ Click play below to see a demo of the application.
 
 https://github.com/LisaMabley/salary_calculator_2023/assets/6124489/43d15533-fe1a-477d-a2f7-e9617091ed92
 
+## Requirements
+
+The application needs to be able to gather employee information, store it, and display it back on the DOM. The user needs to get a total summary of the MONTHLY salary cost. If the total monthly cost exceeds $20,000, notify the user in some way.
+
+Users need to be able to delete each entry and the monthly calculation needs to reflect it.
+
 ## Educational references
 
 ### Component library
