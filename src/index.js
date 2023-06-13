@@ -15,7 +15,6 @@ import { Provider } from 'react-redux';
 
 const employeeListReducer = (employees = staffData.currentStaff, action) => {
   if (action.type === 'ADD_EMPLOYEE') {
-    console.log('HIRING:', action.payload);
     return [...employees, action.payload];
   } else if (action.type === 'REMOVE_EMPLOYEE') {
     return employees.filter(e => e.id !== action.payload);
@@ -24,28 +23,15 @@ const employeeListReducer = (employees = staffData.currentStaff, action) => {
   return employees;
 }
 
-const nextEmployeeIdReducer = (id = staffData.nextEmployeeId, action) => {
-  return id;
-}
-
-const monthlyStaffingExpenseReducer = () => {
-    let annualTotal = 0;
-    staffData.currentStaff.forEach(staffMember => {
-      annualTotal += staffMember.annualSalary;
-    });
-    return annualTotal / 12;
-}
-
 // --- STORE ---
 
 // local state - available only within a component function
 // let [count, setCount] = useState(0);
 // setCount(newValue) ---- handled by reducers' actions
 const storeInstance = createStore(
-  // Combine the two reducers defined above
+  // Combine reducers defined above
   combineReducers(
     {
-      nextEmployeeId: nextEmployeeIdReducer, 
       employeeList: employeeListReducer,
     }
   ),

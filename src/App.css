@@ -3,3 +3,25 @@ body {
   margin: 0;
   background-color: whitesmoke;
 }
+
+.page-header, .page-footer {
+  width: 100%;
+  padding: 24px;
+}
+
+.page-header {
+  background-color: darkblue;
+}
+
+.page-footer {
+  background-color: white;
+}
+
+h1 {
+  color: white;
+}
+
+.p-inline-message {
+  vertical-align: middle;
+  margin-left: 20px;
+}

@@ -1,5 +1,4 @@
 import { Button } from 'primereact/button';
-import './DeleteButton.css';
 import { useDispatch } from 'react-redux';
 
 function DeleteButton({id}) {

@@ -1,5 +1,4 @@
 import { formatAsUSD } from '../../utils/formatAsUSD';
-import './PageFooter.css';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { Message } from 'primereact/message';
@@ -25,10 +24,11 @@ function PageFooter() {
   }, [employeeList]);
 
   return (
-    <footer className="page-header">
-    <h2>Total Monthly Expense: {monthlyExpense} {monthlyBudgetExceeded && <Message severity="warn" text="Monthly Budget Exceeded" />}</h2>
-
-  </footer>
+    <footer className="page-footer">
+      <h2>
+        Total Monthly Expense: {monthlyExpense} 
+        {monthlyBudgetExceeded && <Message severity="error" sticky={true} closable={true} text="Monthly Budget Exceeded" />}</h2>
+    </footer>
   )
 }
 

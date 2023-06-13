@@ -1,18 +1,28 @@
 import './EmployeeForm.css';
 import { Button } from 'primereact/button';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { InputText } from 'primereact/inputtext';
 import { InputNumber } from 'primereact/inputnumber';
 
 function EmployeeForm() {
   const dispatch = useDispatch();
-  const id = useSelector(store => store.nextEmployeeId);
+  const [id, setId] = useState(0);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [title, setTitle] = useState('');
   const [annualSalary, setAnnualSalary] = useState(0);
+  const employeeList = useSelector(store => store.employeeList);
+
+  const updateNextEmployeeId = useEffect(() => {
+    let allEmployeeIds = employeeList.map(e => e.id);
+    allEmployeeIds.sort();
+    const nextId = allEmployeeIds.pop() + 1;
+    setId(nextId);
+
+  }, [employeeList]);
+
 
   const resetForm = () => {
     setFirstName('');
