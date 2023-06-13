@@ -8,7 +8,7 @@ https://github.com/LisaMabley/salary_calculator_2023/assets/6124489/43d15533-fe1
 
 ### Component library
 
-This application uses the PrimeReact component library. For more information and a list of available components, refer to the [documenation](https://primereact.org/installation/).
+This application uses the PrimeReact component library. For more information and a list of available components, refer to the [documentation](https://primereact.org/installation/).
 
 ### Currency formatting
 

@@ -38,7 +38,7 @@ function PageFooter() {
     setMonthlyExpense(formatAsUSD(monthlyExp));
 
     // Also calculate if the above amount is within budget or not
-    // and set that in the global store
+    // and set that in the local store
     const budgetExceeded = monthlyExp > monthlyBudget ? true : false;
     setMonthlyBudgetExceeded(budgetExceeded);
 

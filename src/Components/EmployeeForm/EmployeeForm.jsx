@@ -48,12 +48,12 @@ function EmployeeForm() {
   const handleSave = (event) => {
     event.preventDefault();
 
-    // Call the employeeReducer function, and
-    // run the action defined there as 'ADD_EMPLOYEE'
+    // Call the employeeReducer function, and run
+    // the action defined there as 'ADD_EMPLOYEE'
     dispatch({
       type: 'ADD_EMPLOYEE',
-      // Send the form values we've been tracking in the local store
-      // as the payload
+      // Send the form values we've been tracking 
+      // in the local store as the payload
       payload: {firstName, lastName, id, title, annualSalary} 
     });
 

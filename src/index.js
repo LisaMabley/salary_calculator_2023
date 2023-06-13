@@ -10,20 +10,23 @@ import { Provider } from 'react-redux';
 
 // --- REDUCERS ---
 
-// These functions define how all components of the app can interact 
+// Define how all components of the app can interact 
 // with the information in the local store
 
 const employeeListReducer = (employees = staffData.currentStaff, action) => {
-  // Here we define two actions that components can perform with 
-  // the employeeList in the local store: adding and removing an employee.
-  // These action types can be defined with any name you choose.
+  // Define actions that components can perform with the employeeList in the global store.
+  // Add as many action types as you need, and name them whatever you want.
+
   if (action.type === 'ADD_EMPLOYEE') {
-    // Here we define what we want to happen when an employee is added
+    // Define what we want to happen when this function is called 
+    // with the action.type defined as 'ADD_EMPLOYEE'
     const newEmployee = action.payload;
     const updatedEmployeeList = employees.concat(newEmployee);
     return updatedEmployeeList;
 
   } else if (action.type === 'REMOVE_EMPLOYEE') {
+    // Define what we want to happen when this function is called 
+    // with the action.type defined as 'REMOVE_EMPLOYEE'
     const departingEmployeeId = action.payload.id;
     const allEmployeesMinusDepartingOne = employees.filter(e => e.id !== departingEmployeeId);
     return allEmployeesMinusDepartingOne;
@@ -33,16 +36,30 @@ const employeeListReducer = (employees = staffData.currentStaff, action) => {
   return employees;
 }
 
+const daysWithoutAccidentReducer = (days = staffData.daysWithoutAccidents, action) => {
+  // Define actions that components can perform with the 
+  // daysWithoutAccidentCount in the global store
+
+  if (action.type === 'RESET') {
+    // Define what we want to happen when this function is called 
+    // with the action.type defined as 'RESET'
+    return 0;
+  }
+
+  // If the action isn't one defined above, just return the number of days, unchanged
+  return days;
+}
+
 // --- STORE ---
 
 // This is the global store that will be accessible 
 // in every component of our app, if needed
 const storeInstance = createStore(
-  // Combine reducers defined above
-  // Normally you will see more than just the one we're using here.
+  // Combine all reducers defined above
   combineReducers(
     {
       employeeList: employeeListReducer,
+      daysWithoutAccidentCount: daysWithoutAccidentReducer,
     }
   ),
 );

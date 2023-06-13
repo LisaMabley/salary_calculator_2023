@@ -1,5 +1,5 @@
 const staffData = {
-    nextEmployeeId: 9624,
+    daysWithoutAccidents: 18,
     currentStaff: [
         {
           firstName: "Jen",
