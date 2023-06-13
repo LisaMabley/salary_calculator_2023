@@ -1,8 +1,6 @@
 # React Client Side Salary Calculator App
 
-<video width="320" height="240" controls>
-  <source src="public/demo.mov" type="video/mp4">
-</video>
+https://github.com/LisaMabley/salary_calculator_2023/assets/6124489/43d15533-fe1a-477d-a2f7-e9617091ed92
 
 ## Educational references
 
