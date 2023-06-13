@@ -20,7 +20,7 @@ const employeeListReducer = (employees = staffData.currentStaff, action) => {
   if (action.type === 'ADD_EMPLOYEE') {
     // Here we define what we want to happen when an employee is added
     const newEmployee = action.payload;
-    const updatedEmployeeList = employeeList.concat(newEmployee);
+    const updatedEmployeeList = employees.concat(newEmployee);
     return updatedEmployeeList;
 
   } else if (action.type === 'REMOVE_EMPLOYEE') {

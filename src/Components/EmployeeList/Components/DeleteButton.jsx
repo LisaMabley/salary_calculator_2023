@@ -1,14 +1,16 @@
 import { Button } from 'primereact/button';
 import { useDispatch } from 'react-redux';
 
-function DeleteButton({id}) {
+function DeleteButton({employee}) {
   const dispatch = useDispatch();
 
   const handleRemove = (event) => {
     event.preventDefault();
+    // Call the function defined as employeeReducer in index.js.
+    // Run the code defined there as the 'REMOVE_EMPLOYEE' action.
     dispatch({
       type: 'REMOVE_EMPLOYEE',
-      payload: id,
+      payload: employee,
     });
   }
 

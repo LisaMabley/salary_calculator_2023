@@ -3,16 +3,13 @@ import './EmployeeCard.css';
 import DeleteButton from './DeleteButton';
 import { formatAsUSD } from '../../../utils/formatAsUSD'
 
-// Deconstructing the employee object to import only the properties 
-// we need here for the EmployeeCard is a good way to keep things simple 
-// and reduce memory required
 function EmployeeCard({employee}) {
     const { id, firstName, lastName, title, annualSalary } = employee;
     const formattedSalary = formatAsUSD(annualSalary);
 
     const footer = (
         <div className="card-footer">
-            <DeleteButton id={id}/>
+            <DeleteButton employee={employee}/>
         </div>
     );
 

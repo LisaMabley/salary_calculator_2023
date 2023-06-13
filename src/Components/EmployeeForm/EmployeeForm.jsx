@@ -7,15 +7,29 @@ import { InputText } from 'primereact/inputtext';
 import { InputNumber } from 'primereact/inputnumber';
 
 function EmployeeForm() {
-  const dispatch = useDispatch();
+
+  // --- GLOBAL STORE ---
+
+  // Get the employeeList from the global store
+  const employeeList = useSelector(store => store.employeeList);
+
+  // --- LOCAL STORE ---
+
   const [id, setId] = useState(0);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [title, setTitle] = useState('');
   const [annualSalary, setAnnualSalary] = useState(0);
-  const employeeList = useSelector(store => store.employeeList);
 
-  const updateNextEmployeeId = useEffect(() => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // This effect is watching the employeeList in the global store.
+    // (It's added on line 38.) This function will run whenever there
+    // is a change in the employeeList in the global store.
+
+    // Whenever there is a change in the employee list,
+    // increment the next employee id
     let allEmployeeIds = employeeList.map(e => e.id);
     allEmployeeIds.sort();
     const nextId = allEmployeeIds.pop() + 1;
@@ -34,10 +48,12 @@ function EmployeeForm() {
   const handleSave = (event) => {
     event.preventDefault();
 
-    // tell redux to add new element to elementList reducer
+    // Call the employeeReducer function, and
+    // run the action defined there as 'ADD_EMPLOYEE'
     dispatch({
       type: 'ADD_EMPLOYEE',
-      // element name we're tracking in local state
+      // Send the form values we've been tracking in the local store
+      // as the payload
       payload: {firstName, lastName, id, title, annualSalary} 
     });
 
