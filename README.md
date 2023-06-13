@@ -1,6 +1,8 @@
 # React Client Side Salary Calculator App
 
-![](public/demo.mov)
+<video width="320" height="240" controls>
+  <source src="public/demo.mov" type="video/mp4">
+</video>
 
 ## Educational references
 
