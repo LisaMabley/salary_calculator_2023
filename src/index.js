@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 // --- REDUCERS ---
 
 // Define how all components of the app can interact 
-// with the information in the local store
+// with the information in the global store
 
 const employeeListReducer = (employees = staffData.currentStaff, action) => {
   // Define actions that components can perform with the employeeList in the global store.
