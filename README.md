@@ -1,5 +1,7 @@
 # React Client Side Salary Calculator App
 
+![](public/demo.mov)
+
 ## Educational references
 
 ### Currency formatting
