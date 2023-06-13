@@ -14,22 +14,32 @@ import { Provider } from 'react-redux';
 // with the information in the local store
 
 const employeeListReducer = (employees = staffData.currentStaff, action) => {
+  // Here we define two actions that components can perform with 
+  // the employeeList in the local store: adding and removing an employee.
+  // These action types can be defined with any name you choose.
   if (action.type === 'ADD_EMPLOYEE') {
-    return [...employees, action.payload];
+    // Here we define what we want to happen when an employee is added
+    const newEmployee = action.payload;
+    const updatedEmployeeList = employeeList.concat(newEmployee);
+    return updatedEmployeeList;
+
   } else if (action.type === 'REMOVE_EMPLOYEE') {
-    return employees.filter(e => e.id !== action.payload);
+    const departingEmployeeId = action.payload.id;
+    const allEmployeesMinusDepartingOne = employees.filter(e => e.id !== departingEmployeeId);
+    return allEmployeesMinusDepartingOne;
   }
 
+  // If the action isn't one of the above two, just return the unchanged list
   return employees;
 }
 
 // --- STORE ---
 
-// local state - available only within a component function
-// let [count, setCount] = useState(0);
-// setCount(newValue) ---- handled by reducers' actions
+// This is the global store that will be accessible 
+// in every component of our app, if needed
 const storeInstance = createStore(
   // Combine reducers defined above
+  // Normally you will see more than just the one we're using here.
   combineReducers(
     {
       employeeList: employeeListReducer,
@@ -40,6 +50,7 @@ const storeInstance = createStore(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* The provider is the redux part, that's what makes this store globally accessible */}
     <Provider store={storeInstance}>
       <App />
     </Provider>

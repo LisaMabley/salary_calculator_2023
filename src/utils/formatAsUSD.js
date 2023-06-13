@@ -1,5 +1,11 @@
+/**
+ * Receives a number (integer or float)
+ * @returns a string representing that number formatted in U.S. dollars
+ * (with a dollar sign, commas between the thousands, and two decimal places).
+ * Used in EmployeeCard and PageFooter.
+ */
+
 export function formatAsUSD(number) {
-  // For more information about formatting numbers as international currency,
-  // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(number);
+  const numberAsCurrencyString = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(number);
+  return numberAsCurrencyString;
 }
